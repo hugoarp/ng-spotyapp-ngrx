@@ -8,7 +8,6 @@ import { TrackInfo } from 'src/app/core/services/interfaces/track';
 })
 export class TrackDetailsComponent implements OnInit {
   @Input() track!: TrackInfo;
-
   @Output() favoriteEvent = new EventEmitter();
 
   constructor() {}
@@ -16,6 +15,6 @@ export class TrackDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   emitFavoriteEvent() {
-    this.favoriteEvent.emit();
+    this.favoriteEvent.emit(this.track.id);
   }
 }

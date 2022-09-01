@@ -4,6 +4,7 @@
     <app-track-details
       *ngFor="let track of tracks"
       [track]="track"
+      (favoriteEvent)="saveFavoriteTrack($event)"
     ></app-track-details>
   </article>
 </section>
