@@ -1,12 +1,9 @@
 <section class="home">
-    <h2 class="home__title">Mis favoritos</h2>
-    <article class="home__new-releases">
-      <app-track-card
-        *ngFor="let favorite of listOfFavorites"
-        [cover]="favorite.track.album.images[0].url"
-        [title]="favorite.track.name"
-        [description]="favorite.track.artists[0].name!"
-      ></app-track-card>
-    </article>
-  </section>
-  
+  <h2 class="home__title">Mis favoritos</h2>
+  <article class="home__new-releases">
+    <app-track-details
+      *ngFor="let track of favoriteTracks"
+      [track]="track"
+    ></app-track-details>
+  </article>
+</section>

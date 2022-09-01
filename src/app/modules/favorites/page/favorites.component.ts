@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/app/core/services/interfaces/favorites';
+import { TrackInfo } from 'src/app/core/services/interfaces/track';
 import { SpotifyService } from 'src/app/core/services/spotify.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { SpotifyService } from 'src/app/core/services/spotify.service';
   styleUrls: ['./favorites.component.scss'],
 })
 export class FavoritesComponent implements OnInit {
-  listOfFavorites: Item[] = [];
+  favoriteTracks: TrackInfo[] = [];
 
   constructor(private spotifyService: SpotifyService) {}
 
@@ -18,8 +19,7 @@ export class FavoritesComponent implements OnInit {
 
   getUserFavorites() {
     this.spotifyService.getUserFavorites().subscribe((res) => {
-      this.listOfFavorites = res.items;
-      console.log(this.listOfFavorites);
+      this.favoriteTracks = res;
     });
   }
 }
