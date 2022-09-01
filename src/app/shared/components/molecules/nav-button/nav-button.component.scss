@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixins";
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $gray-primary;
+  @include from($medium) {
+    flex-direction: row;
+    gap:0.5rem;
+  }
+  &:hover {
+    color: $light-primary;
+    cursor: default;
+  }
+}
