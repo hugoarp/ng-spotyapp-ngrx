@@ -1,0 +1,8 @@
+<nav class="nav-menu">
+  <app-nav-button
+    *ngFor="let item of menuItems"
+    [icon]="item.icon"
+    [label]="item.label"
+    [routerLink]="item.route"
+  ></app-nav-button>
+</nav>

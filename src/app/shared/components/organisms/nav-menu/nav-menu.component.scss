@@ -1,0 +1,23 @@
+@import "variables";
+@import "mixins";
+
+.nav-menu {
+  width: 100%;
+  background-color: black;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  @include from($medium) {
+    bottom: auto;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    width: 10rem;
+    height: 100%;
+    padding: 1rem;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+}
