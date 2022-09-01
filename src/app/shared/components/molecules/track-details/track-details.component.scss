@@ -1,4 +1,21 @@
+@import "variables";
+
 .track-details {
+  display: flex;
+  flex-direction: column;
+  background-color: $dark-secondary;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  &:hover {
+    background-color: $dark-tertiary;
+  }
+  &__footer {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__fav {
+    cursor: pointer;
+    font-size: 20px;
+  }
 }

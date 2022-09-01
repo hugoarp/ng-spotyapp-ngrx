@@ -1,5 +1,10 @@
 <section class="track-details">
-  <app-cover-img [cover]="cover"></app-cover-img>
-  <app-text-b [text]="title"></app-text-b>
-  <app-text-a [text]="description"></app-text-a>
+  <app-cover-img [cover]="track.cover"></app-cover-img>
+  <app-text-b [text]="track.title"></app-text-b>
+  <article class="track-details__footer">
+    <app-text-a [text]="track.description!"></app-text-a>
+    <i class="material-icons track-details__fav" (click)="emitFavoriteEvent()"
+      >favorite
+    </i>
+  </article>
 </section>

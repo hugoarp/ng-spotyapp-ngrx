@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TrackInfo } from 'src/app/core/services/interfaces/track';
 
 @Component({
   selector: 'app-track-details',
@@ -6,11 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./track-details.component.scss'],
 })
 export class TrackDetailsComponent implements OnInit {
-  @Input() cover: string = '';
-  @Input() title: string = '';
-  @Input() description: string = '';
+  @Input() track!: TrackInfo;
+
+  @Output() favoriteEvent = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  emitFavoriteEvent() {
+    this.favoriteEvent.emit();
+  }
 }
