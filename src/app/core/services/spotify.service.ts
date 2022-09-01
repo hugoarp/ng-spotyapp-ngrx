@@ -50,4 +50,8 @@ export class SpotifyService {
         )
       );
   }
+
+  saveFavoriteTrack(trackId: string) {
+    return this.http.put(`${environment.url}/me/tracks?ids=${trackId}`, {});
+  }
 }
