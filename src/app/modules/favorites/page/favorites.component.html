@@ -4,6 +4,7 @@
     <app-track-details
       *ngFor="let track of favoriteTracks"
       [track]="track"
+      (favoriteEvent)="deleteFavoriteTrack($event)"
     ></app-track-details>
   </article>
 </section>

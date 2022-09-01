@@ -54,4 +54,8 @@ export class SpotifyService {
   saveFavoriteTrack(trackId: string) {
     return this.http.put(`${environment.url}/me/tracks?ids=${trackId}`, {});
   }
+
+  deleteFavoriteTrack(trackId: string) {
+    return this.http.delete(`${environment.url}/me/tracks?ids=${trackId}`);
+  }
 }

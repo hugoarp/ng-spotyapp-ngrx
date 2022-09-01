@@ -22,4 +22,9 @@ export class FavoritesComponent implements OnInit {
       this.favoriteTracks = res;
     });
   }
+
+  deleteFavoriteTrack(id: string) {
+    this.spotifyService.deleteFavoriteTrack(id).subscribe();
+    this.getUserFavorites();
+  }
 }
