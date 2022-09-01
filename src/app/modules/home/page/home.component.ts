@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
       this.tracks = res;
     });
   }
+
+  saveFavoriteTrack(id: string) {
+    this.spotifyService.saveFavoriteTrack(id).subscribe();
+  }
 }
