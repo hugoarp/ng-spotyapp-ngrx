@@ -1,0 +1,11 @@
+@import "variables";
+
+.track-card {
+  background-color: $dark-secondary;
+  
+  padding: 1rem;
+  border-radius: 0.5rem;
+  &:hover {
+    background-color: $dark-tertiary;
+  }
+}
