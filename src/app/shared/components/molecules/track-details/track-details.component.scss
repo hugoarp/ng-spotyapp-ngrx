@@ -17,5 +17,8 @@
   &__fav {
     cursor: pointer;
     font-size: 20px;
+    &:hover {
+      scale: 1.2;
+    }
   }
 }
