@@ -1,8 +1,29 @@
 @import "variables";
+@import "mixins";
 
 .user-button {
   background-color: $dark-secondary;
-  border-radius: 1rem;
+  border-radius: 2rem;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  &:hover {
+    background-color: $dark-tertiary;
+  }
+  &__img {
+    border-radius: 100%;
+    width: 35px;
+    padding: 0.2rem;
+  }
+  &__name {
+    display: none;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include from($small) {
+      display: block;
+    }
+  }
 }
