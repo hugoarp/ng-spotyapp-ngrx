@@ -1,8 +1,16 @@
 <nav class="nav-menu">
-  <app-nav-button
-    *ngFor="let item of menuItems"
-    [icon]="item.icon"
-    [label]="item.label"
-    [routerLink]="item.route"
-  ></app-nav-button>
+  <img
+    src="../../../../../assets/img/spotify-logo.svg"
+    alt="Logo de spotify"
+    class="nav-menu__logo"
+  />
+  <section class="nav-menu__pages">
+    <app-nav-button
+      *ngFor="let item of menuItems"
+      [icon]="item.icon"
+      [label]="item.label"
+      [routerLink]="item.route"
+    ></app-nav-button>
+  </section>
+  <app-user-button [user]="user" class="nav-menu__user"></app-user-button>
 </nav>

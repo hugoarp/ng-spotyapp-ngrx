@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserResponse } from 'src/app/core/services/interfaces/user';
+import { UserInfo } from 'src/app/core/services/interfaces/user';
 
 @Component({
   selector: 'app-nav-menu',
@@ -8,6 +8,8 @@ import { UserResponse } from 'src/app/core/services/interfaces/user';
 })
 export class NavMenuComponent implements OnInit {
   @Input() menuItems: any[] = [];
+  @Input() user!: UserInfo;
+
   constructor() {}
 
   ngOnInit(): void {}
