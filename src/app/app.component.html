@@ -1,4 +1,8 @@
 <section class="principal">
-  <app-nav-menu [menuItems]="menuItems"></app-nav-menu>
+  <app-nav-menu
+    [menuItems]="menuItems"
+    [user]="currentUser"
+    *ngIf="!hideNavbar()"
+  ></app-nav-menu>
   <router-outlet></router-outlet>
 </section>

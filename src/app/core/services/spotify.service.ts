@@ -14,7 +14,12 @@ export class SpotifyService {
   constructor(private http: HttpClient) {}
 
   getCurrentUser() {
-    return this.http.get<UserResponse>(`${environment.url}/me`);
+    return this.http.get<UserResponse>(`${environment.url}/me`).pipe(
+      map((user) => ({
+        name: user.display_name,
+        image: user.images[0].url,
+      }))
+    );
   }
 
   getRecommendations(): Observable<TrackInfo[]> {

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserInfo } from './core/services/interfaces/user';
+import { SpotifyService } from './core/services/spotify.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-music-app-challenge';
   menuItems: any[] = [];
+  currentUser: UserInfo = {
+    name: '',
+    image: '',
+  };
 
-  constructor() {
+  constructor(private spotifyService: SpotifyService) {
     this.menuItems = [
       {
         icon: 'home',
@@ -22,5 +28,17 @@ export class AppComponent {
         route: '/favoritos',
       },
     ];
+
+    this.getCurrentUser();
+  }
+
+  hideNavbar(): boolean {
+    return window.location.pathname === '/login';
+  }
+
+  getCurrentUser() {
+    this.spotifyService.getCurrentUser().subscribe((res) => {
+      this.currentUser = res;
+    });
   }
 }
