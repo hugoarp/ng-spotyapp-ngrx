@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AuthInterceptorService } from './core/interceptors/auth-interceptor.service';
 import { OrganismsModule } from './shared/components/organisms/organisms.module';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { OrganismsModule } from './shared/components/organisms/organisms.module'
     OrganismsModule,
     HttpClientModule,
     RouterModule,
+    HotToastModule.forRoot(),
   ],
   providers: [
     {
