@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotToastService } from '@ngneat/hot-toast';
 import { TrackInfo } from 'src/app/core/services/interfaces/track';
 import { SpotifyService } from 'src/app/core/services/spotify.service';
 
@@ -10,7 +11,10 @@ import { SpotifyService } from 'src/app/core/services/spotify.service';
 export class HomeComponent implements OnInit {
   tracks: TrackInfo[] = [];
 
-  constructor(private spotifyService: SpotifyService) {}
+  constructor(
+    private spotifyService: SpotifyService,
+    private toast: HotToastService
+  ) {}
 
   ngOnInit(): void {
     this.getRecommendations();
@@ -24,5 +28,9 @@ export class HomeComponent implements OnInit {
 
   saveFavoriteTrack(id: string) {
     this.spotifyService.saveFavoriteTrack(id).subscribe();
+    this.toast.show('Añadido a favoritos', {
+      icon: '💚',
+      position: 'bottom-right',
+    });
   }
 }
