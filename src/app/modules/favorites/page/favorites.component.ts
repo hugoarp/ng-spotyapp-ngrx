@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from 'src/app/core/services/interfaces/favorites';
+import { HotToastService } from '@ngneat/hot-toast';
 import { TrackInfo } from 'src/app/core/services/interfaces/track';
 import { SpotifyService } from 'src/app/core/services/spotify.service';
 
@@ -11,7 +11,10 @@ import { SpotifyService } from 'src/app/core/services/spotify.service';
 export class FavoritesComponent implements OnInit {
   favoriteTracks: TrackInfo[] = [];
 
-  constructor(private spotifyService: SpotifyService) {}
+  constructor(
+    private spotifyService: SpotifyService,
+    private toast: HotToastService
+  ) {}
 
   ngOnInit(): void {
     this.getUserFavorites();
@@ -24,7 +27,12 @@ export class FavoritesComponent implements OnInit {
   }
 
   deleteFavoriteTrack(id: string) {
-    this.spotifyService.deleteFavoriteTrack(id).subscribe();
-    this.getUserFavorites();
+    this.spotifyService.deleteFavoriteTrack(id).subscribe((res) => {
+      this.toast.show('Eliminado de favoritos', {
+        icon: '💔',
+        position: 'bottom-right',
+      });
+      this.getUserFavorites();
+    });
   }
 }
