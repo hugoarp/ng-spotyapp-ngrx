@@ -9,6 +9,11 @@ export interface UserResponse {
   uri: string;
 }
 
+export interface UserInfo {
+  name: string;
+  image: string;
+}
+
 export interface ExternalUrls {
   spotify: string;
 }
