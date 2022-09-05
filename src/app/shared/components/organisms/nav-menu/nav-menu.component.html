@@ -12,5 +12,8 @@
       [routerLink]="item.route"
     ></app-nav-button>
   </section>
-  <app-user-button [user]="user" class="nav-menu__user"></app-user-button>
+  <app-user-button
+    [user]="currentUser"
+    class="nav-menu__user"
+  ></app-user-button>
 </nav>
