@@ -12,13 +12,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/login/login.module').then((m) => m.LoginModule),
   },
-  {
-    path: 'favoritos',
-    loadChildren: () =>
-      import('./modules/favorites/favorites.module').then(
-        (m) => m.FavoritesModule
-      ),
-  },
   { path: '**', redirectTo: 'inicio', pathMatch: 'full' },
 ];
 

@@ -1,10 +1,5 @@
-<section class="home">
-  <h2 class="home__title">Canciones recomendadas</h2>
-  <article class="home__new-releases">
-    <app-track-details
-      *ngFor="let track of tracks"
-      [track]="track"
-      (favoriteEvent)="saveFavoriteTrack($event)"
-    ></app-track-details>
-  </article>
-</section>
+<app-nav-menu
+  [menuItems]="menuItems"
+  [currentUser]="currentUser"
+></app-nav-menu>
+<router-outlet></router-outlet>

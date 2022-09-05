@@ -5,6 +5,7 @@ import { FavoritesRoutingModule } from './favorites-routing.module';
 import { FavoritesComponent } from './page/favorites.component';
 import { OrganismsModule } from 'src/app/shared/components/organisms/organisms.module';
 import { MoleculesModule } from 'src/app/shared/components/molecules/molecules.module';
+import { TemplatesModule } from 'src/app/shared/components/templates/templates.module';
 
 @NgModule({
   declarations: [FavoritesComponent],
@@ -13,6 +14,8 @@ import { MoleculesModule } from 'src/app/shared/components/molecules/molecules.m
     FavoritesRoutingModule,
     OrganismsModule,
     MoleculesModule,
+    TemplatesModule,
   ],
+  exports: [FavoritesComponent],
 })
 export class FavoritesModule {}

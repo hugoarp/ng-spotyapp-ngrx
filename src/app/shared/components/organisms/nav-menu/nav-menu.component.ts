@@ -8,34 +8,13 @@ import { SpotifyService } from 'src/app/core/services/spotify.service';
   styleUrls: ['./nav-menu.component.scss'],
 })
 export class NavMenuComponent implements OnInit {
-  menuItems: any[] = [];
-  currentUser: UserInfo = {
-    name: '',
-    image: '',
-  };
+  @Input() menuItems: any[] = [];
+  @Input() currentUser!: UserInfo;
 
-  constructor(private spotifyService: SpotifyService) {
-    this.menuItems = [
-      {
-        icon: 'home',
-        label: 'Inicio',
-        route: '/inicio',
-      },
-      {
-        icon: 'favorite',
-        label: 'Favoritos',
-        route: '/favoritos',
-      },
-    ];
-  }
+  constructor(private spotifyService: SpotifyService) {}
 
   ngOnInit(): void {
-    this.getCurrentUser();
   }
 
-  getCurrentUser() {
-    this.spotifyService.getCurrentUser().subscribe((res) => {
-      this.currentUser = res;
-    });
-  }
+
 }

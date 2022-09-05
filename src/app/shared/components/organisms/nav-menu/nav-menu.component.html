@@ -7,8 +7,7 @@
   <section class="nav-menu__pages">
     <app-nav-button
       *ngFor="let item of menuItems"
-      [icon]="item.icon"
-      [label]="item.label"
+      [buttonInfo]="item"
       [routerLink]="item.route"
     ></app-nav-button>
   </section>

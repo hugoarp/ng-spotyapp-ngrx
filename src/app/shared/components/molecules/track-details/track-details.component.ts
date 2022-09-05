@@ -7,7 +7,12 @@ import { TrackInfo } from 'src/app/core/services/interfaces/track';
   styleUrls: ['./track-details.component.scss'],
 })
 export class TrackDetailsComponent implements OnInit {
-  @Input() track!: TrackInfo;
+  @Input() track: TrackInfo = {
+    cover: '',
+    title: '',
+    description: '',
+    id: '',
+  };
   @Output() favoriteEvent = new EventEmitter();
 
   constructor() {}

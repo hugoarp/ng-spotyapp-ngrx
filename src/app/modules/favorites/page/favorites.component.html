@@ -1,10 +1,4 @@
-<section class="home">
-  <h2 class="home__title">Mis favoritos</h2>
-  <article class="home__new-releases">
-    <app-track-details
-      *ngFor="let track of favoriteTracks"
-      [track]="track"
-      (favoriteEvent)="deleteFavoriteTrack($event)"
-    ></app-track-details>
-  </article>
-</section>
+<app-track-list
+  [tracks]="favoriteTracks"
+  [listTitle]="'Tus favoritos'"
+></app-track-list>
