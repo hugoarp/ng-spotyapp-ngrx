@@ -9,6 +9,9 @@ import { CoreModule } from './core/core.module';
 import { AuthInterceptorService } from './core/interceptors/auth-interceptor.service';
 import { OrganismsModule } from './shared/components/organisms/organisms.module';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +23,8 @@ import { HotToastModule } from '@ngneat/hot-toast';
     HttpClientModule,
     RouterModule,
     HotToastModule.forRoot(),
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
   ],
   providers: [
     {
