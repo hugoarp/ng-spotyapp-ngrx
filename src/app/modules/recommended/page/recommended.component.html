@@ -1,4 +1,10 @@
 <app-track-list
+  *ngIf="tracks$ | async as tracks"
   [tracks]="tracks"
   [listTitle]="'Nuestros recomendados'"
-></app-track-list>
+  (favoriteEvent)="addFavoriteTrack($event)"
+>
+  <ng-template #default [ngIf]="tracks.length === 0">
+    <span>Cargando recomedados...</span>
+  </ng-template>
+</app-track-list>

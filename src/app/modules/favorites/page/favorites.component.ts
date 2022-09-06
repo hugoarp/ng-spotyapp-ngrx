@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { HotToastService } from '@ngneat/hot-toast';
-import { TrackInfo } from 'src/app/core/services/interfaces/track';
-import { SpotifyService } from 'src/app/core/services/spotify.service';
+import { Store } from '@ngrx/store';
+import {
+  loadFavoritesTracks,
+  removeFavoriteTrack,
+} from 'src/app/core/store/favorites/favorites.actions';
+import { Observable, tap } from 'rxjs';
+import { selectFavoritesTracks } from 'src/app/core/store/favorites/favorites.selectors';
+import { TrackInfo } from '@core/interfaces/track';
+import { AppState } from '@core/store/app.state';
 
 @Component({
   selector: 'app-favorites',
@@ -9,30 +15,21 @@ import { SpotifyService } from 'src/app/core/services/spotify.service';
   styleUrls: ['./favorites.component.scss'],
 })
 export class FavoritesComponent implements OnInit {
-  favoriteTracks: TrackInfo[] = [];
+  favoriteTracks$: Observable<TrackInfo[]> = this.store.select(
+    selectFavoritesTracks
+  );
 
-  constructor(
-    private spotifyService: SpotifyService,
-    private toast: HotToastService
-  ) {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.getUserFavorites();
   }
 
   getUserFavorites() {
-    this.spotifyService.getUserFavorites().subscribe((res) => {
-      this.favoriteTracks = res;
-    });
+    this.store.dispatch(loadFavoritesTracks());
   }
 
-  deleteFavoriteTrack(id: string) {
-    this.spotifyService.deleteFavoriteTrack(id).subscribe((res) => {
-      this.toast.show('Eliminado de favoritos', {
-        icon: '💔',
-        position: 'bottom-right',
-      });
-      this.getUserFavorites();
-    });
+  removeFavoriteTrack(trackInfo: TrackInfo) {
+    this.store.dispatch(removeFavoriteTrack({ trackInfo }));
   }
 }

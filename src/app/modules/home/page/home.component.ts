@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HotToastService } from '@ngneat/hot-toast';
-import { TrackInfo } from 'src/app/core/services/interfaces/track';
-import { UserInfo } from 'src/app/core/services/interfaces/user';
+import { Store } from '@ngrx/store';
+import { TrackInfo } from 'src/app/core/interfaces/track';
+import { UserInfo } from 'src/app/core/interfaces/user';
 import { SpotifyService } from 'src/app/core/services/spotify.service';
+import { loadUserDetails } from 'src/app/core/store/user/user.actions';
 
 @Component({
   selector: 'app-home',
@@ -17,10 +19,7 @@ export class HomeComponent implements OnInit {
     image: '',
   };
 
-  constructor(
-    private spotifyService: SpotifyService,
-    private toast: HotToastService
-  ) {
+  constructor(private store: Store<any>) {
     this.menuItems = [
       {
         icon: 'home',
@@ -36,27 +35,18 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getRecommendations();
     this.getCurrentUser();
   }
 
-  getRecommendations() {
-    this.spotifyService.getRecommendations().subscribe((res) => {
-      this.tracks = res;
-    });
-  }
-
-  saveFavoriteTrack(id: string) {
-    this.spotifyService.saveFavoriteTrack(id).subscribe();
-    this.toast.show('Añadido a favoritos', {
-      icon: '💚',
-      position: 'bottom-right',
-    });
-  }
+  // saveFavoriteTrack(id: string) {
+  //   this.spotifyService.saveFavoriteTrack(id).subscribe();
+  //   this.toast.show('Añadido a favoritos', {
+  //     icon: '💚',
+  //     position: 'bottom-right',
+  //   });
+  // }
 
   getCurrentUser() {
-    this.spotifyService.getCurrentUser().subscribe((res) => {
-      this.currentUser = res;
-    });
+    this.store.dispatch(loadUserDetails());
   }
 }

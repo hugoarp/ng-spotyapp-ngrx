@@ -1,4 +1,10 @@
 <app-track-list
-  [tracks]="favoriteTracks"
+  *ngIf="favoriteTracks$ | async as favorites"
+  [tracks]="favorites"
   [listTitle]="'Tus favoritos'"
-></app-track-list>
+  (favoriteEvent)="removeFavoriteTrack($event)"
+>
+  <ng-template #default [ngIf]="favorites.length === 0">
+    <span>No tienes favoritos</span>
+  </ng-template>
+</app-track-list>
