@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { TrackInfo } from 'src/app/core/services/interfaces/track';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { TrackInfo } from '@core/interfaces/track';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-track-list',
@@ -10,11 +11,13 @@ export class TrackListComponent implements OnInit {
   @Input() tracks: TrackInfo[] = [];
   @Input() listTitle: string = '';
 
+  @Output() favoriteEvent = new EventEmitter<TrackInfo>();
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  emitFavoriteEvent(event: any) {
-    console.log(event);
+  emitFavoriteEvent(event: TrackInfo) {
+    this.favoriteEvent.emit(event);
   }
 }

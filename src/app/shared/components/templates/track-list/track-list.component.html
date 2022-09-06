@@ -1,5 +1,6 @@
 <section class="track-list">
   <h2 class="track-list__title">{{ listTitle }}</h2>
+  <ng-content #default></ng-content>
   <article class="track-list__content">
     <app-track-details
       *ngFor="let track of tracks"
