@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UserInfo } from 'src/app/core/services/interfaces/user';
+import { UserInfo } from 'src/app/core/interfaces/user';
 
 @Component({
   selector: 'app-user-button',
