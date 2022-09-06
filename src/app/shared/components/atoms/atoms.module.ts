@@ -5,7 +5,6 @@ import { TextAComponent } from './text-a/text-a.component';
 import { GIconComponent } from './g-icon/g-icon.component';
 import { CoverImgComponent } from './cover-img/cover-img.component';
 import { TextBComponent } from './text-b/text-b.component';
-import { AvatarComponent } from './avatar/avatar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +13,6 @@ import { AvatarComponent } from './avatar/avatar.component';
     GIconComponent,
     CoverImgComponent,
     TextBComponent,
-    AvatarComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -23,7 +21,6 @@ import { AvatarComponent } from './avatar/avatar.component';
     GIconComponent,
     CoverImgComponent,
     TextBComponent,
-    AvatarComponent
   ],
 })
 export class AtomsModule {}

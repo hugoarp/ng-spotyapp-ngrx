@@ -7,16 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AuthInterceptorService } from './core/interceptors/auth-interceptor.service';
-import { OrganismsModule } from './shared/components/organisms/organisms.module';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
 import { ROOT_REDUCERS } from './core/store/app.state';
 import { EffectsModule } from '@ngrx/effects';
 import { UserInfoEffects } from './core/store/user/user.effects';
 import { RecommendedTracksInfoEffects } from './core/store/recommended/recommended.effects';
 import { FavoritesTracksInfoEffects } from './core/store/favorites/favorites.effects';
+import { OrganismsModule } from '@shared/components/organisms/organisms.module';
 
 @NgModule({
   declarations: [AppComponent],
