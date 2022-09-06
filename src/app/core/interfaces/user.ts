@@ -14,6 +14,11 @@ export interface UserInfo {
   image: string;
 }
 
+export interface UserInfoState {
+  loading: boolean;
+  user: UserInfo;
+}
+
 export interface ExternalUrls {
   spotify: string;
 }
