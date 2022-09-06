@@ -12,7 +12,7 @@
     ></app-nav-button>
   </section>
   <app-user-button
-    [user]="currentUser"
+    [user]="currentUser$ | async"
     class="nav-menu__user"
   ></app-user-button>
 </nav>

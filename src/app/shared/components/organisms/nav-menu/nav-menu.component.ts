@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserInfo } from 'src/app/core/services/interfaces/user';
-import { SpotifyService } from 'src/app/core/services/spotify.service';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/core/store/app.state';
+import { selectUser } from 'src/app/core/store/user/user.selectors';
 
 @Component({
   selector: 'app-nav-menu',
@@ -9,12 +11,11 @@ import { SpotifyService } from 'src/app/core/services/spotify.service';
 })
 export class NavMenuComponent implements OnInit {
   @Input() menuItems: any[] = [];
-  @Input() currentUser!: UserInfo;
+  currentUser$: Observable<any> = new Observable();
 
-  constructor(private spotifyService: SpotifyService) {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
+    this.currentUser$ = this.store.select(selectUser);
   }
-
-
 }
