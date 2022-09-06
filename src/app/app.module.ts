@@ -12,6 +12,11 @@ import { HotToastModule } from '@ngneat/hot-toast';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { ROOT_REDUCERS } from './core/store/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { UserInfoEffects } from './core/store/user/user.effects';
+import { RecommendedTracksInfoEffects } from './core/store/recommended/recommended.effects';
+import { FavoritesTracksInfoEffects } from './core/store/favorites/favorites.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +28,13 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     RouterModule,
     HotToastModule.forRoot(),
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
+    EffectsModule.forRoot([
+      UserInfoEffects,
+      RecommendedTracksInfoEffects,
+      FavoritesTracksInfoEffects,
+    ]),
   ],
   providers: [
     {
