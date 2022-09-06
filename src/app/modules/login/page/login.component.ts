@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   authorizeAccess(token: string | null) {
     if (token) {
       sessionStorage.setItem('token', token);
-      this.router.navigate(['home']);
+      this.router.navigate(['inicio']);
 
       return;
     }
