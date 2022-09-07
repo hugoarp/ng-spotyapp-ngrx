@@ -7,23 +7,54 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  position: absolute;
+  top: 16px;
+  right: 16px;
   cursor: pointer;
   &:hover {
     background-color: $dark-tertiary;
+  }
+  &:hover .user-button__dropdown {
+    display: block;
   }
   &__img {
     border-radius: 100%;
     width: 35px;
     padding: 0.2rem;
+    z-index: 5;
   }
   &__name {
     display: none;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    @include from($small) {
+    z-index: 5;
+    @include from($s-medium) {
       display: block;
+    }
+  }
+  &__dropdown {
+    display: none;
+    border-radius: 1rem;
+    padding-top: 3rem;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  &__menu {
+    background-color: $dark-tertiary;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    &:hover {
+      background-color: $gray-secondary;
+    }
+    &-a {
+      padding: 0.5rem 1rem;
+      text-align: center;
     }
   }
 }

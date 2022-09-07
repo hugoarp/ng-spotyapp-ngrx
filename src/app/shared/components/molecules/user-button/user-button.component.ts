@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserInfo } from 'src/app/core/interfaces/user';
 
 @Component({
@@ -8,7 +9,12 @@ import { UserInfo } from 'src/app/core/interfaces/user';
 })
 export class UserButtonComponent implements OnInit {
   @Input() user!: UserInfo;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  logout() {
+    sessionStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 }

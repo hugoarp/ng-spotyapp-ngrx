@@ -1,4 +1,9 @@
 <section class="user-button">
   <img [src]="user.image" alt="Foto de perfil" class="user-button__img" />
   <p class="user-button__name">{{ user.name }}</p>
+  <div class="user-button__dropdown">
+    <div class="user-button__menu">
+      <a class="user-button__menu-a" (click)="logout()">Cerrar sesión</a>
+    </div>
+  </div>
 </section>
