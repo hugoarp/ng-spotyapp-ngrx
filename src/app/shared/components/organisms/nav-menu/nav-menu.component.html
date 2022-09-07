@@ -1,6 +1,6 @@
 <nav class="nav-menu">
   <img
-    src="../../../../../assets/img/spotify-logo.svg"
+    src="./assets/img/spotify-logo.svg"
     alt="Logo de spotify"
     class="nav-menu__logo"
   />
@@ -11,8 +11,4 @@
       [routerLink]="item.route"
     ></app-nav-button>
   </section>
-  <app-user-button
-    [user]="currentUser$ | async"
-    class="nav-menu__user"
-  ></app-user-button>
 </nav>
