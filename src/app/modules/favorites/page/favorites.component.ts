@@ -6,8 +6,8 @@ import {
 } from 'src/app/core/store/favorites/favorites.actions';
 import { Observable, tap } from 'rxjs';
 import { selectFavoritesTracks } from 'src/app/core/store/favorites/favorites.selectors';
-import { TrackInfo } from '@core/interfaces/track';
-import { AppState } from '@core/store/app.state';
+import { TrackInfo } from 'src/app/core/interfaces/track';
+import { AppState } from 'src/app/core/store/app.state';
 
 @Component({
   selector: 'app-favorites',

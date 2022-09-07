@@ -15,20 +15,6 @@
     display: grid;
     justify-items: center;
     gap: 1rem;
-    @include from($small) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @include from($medium) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @include from($x-large) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    @include from($xxx-large) {
-      grid-template-columns: repeat(5, 1fr);
-    }
-    @include from($high-quality) {
-      grid-template-columns: repeat(6, 1fr);
-    }
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
   }
 }

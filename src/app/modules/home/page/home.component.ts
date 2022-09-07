@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AppState } from '@core/store/app.state';
 import { Store } from '@ngrx/store';
 import { TrackInfo } from 'src/app/core/interfaces/track';
-import { loadUserDetails } from 'src/app/core/store/user/user.actions';
 import { Observable } from 'rxjs';
-import { selectUser } from '@core/store/user/user.selectors';
+import { AppState } from 'src/app/core/store/app.state';
+import { selectUser } from 'src/app/core/store/user/user.selectors';
+import { loadUserDetails } from 'src/app/core/store/user/user.actions';
 
 @Component({
   selector: 'app-home',

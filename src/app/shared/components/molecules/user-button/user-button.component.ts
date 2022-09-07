@@ -8,7 +8,10 @@ import { UserInfo } from 'src/app/core/interfaces/user';
   styleUrls: ['./user-button.component.scss'],
 })
 export class UserButtonComponent implements OnInit {
-  @Input() user!: UserInfo;
+  @Input() user: UserInfo = {
+    name: '',
+    image: '',
+  };
   constructor(private router: Router) {}
 
   ngOnInit(): void {}

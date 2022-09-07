@@ -6,6 +6,7 @@
   background-color: $dark-secondary;
   padding: 1rem;
   border-radius: 0.5rem;
+  width: 200px;
   &:hover {
     background-color: $dark-tertiary;
   }
@@ -21,5 +22,12 @@
       scale: 1.2;
       color: $green-primary;
     }
+  }
+  &__text {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 1rem;
   }
 }

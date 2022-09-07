@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { TrackInfo } from '@core/interfaces/track';
 import { EventEmitter } from '@angular/core';
+import { TrackInfo } from 'src/app/core/interfaces/track';
 
 @Component({
   selector: 'app-track-list',
