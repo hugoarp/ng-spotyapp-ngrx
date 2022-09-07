@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TrackListComponent } from './track-list/track-list.component';
+import { NgModule } from '@angular/core';
 import { MoleculesModule } from '../molecules/molecules.module';
+import { TrackListComponent } from './track-list/track-list.component';
 
 @NgModule({
   declarations: [TrackListComponent],
