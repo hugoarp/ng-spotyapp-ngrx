@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HotToastService } from '@ngneat/hot-toast';
+import { AppState } from '@core/store/app.state';
 import { Store } from '@ngrx/store';
 import { TrackInfo } from 'src/app/core/interfaces/track';
-import { UserInfo } from 'src/app/core/interfaces/user';
-import { SpotifyService } from 'src/app/core/services/spotify.service';
 import { loadUserDetails } from 'src/app/core/store/user/user.actions';
+import { Observable } from 'rxjs';
+import { selectUser } from '@core/store/user/user.selectors';
 
 @Component({
   selector: 'app-home',
@@ -14,12 +14,9 @@ import { loadUserDetails } from 'src/app/core/store/user/user.actions';
 export class HomeComponent implements OnInit {
   menuItems: any[] = [];
   tracks: TrackInfo[] = [];
-  currentUser: UserInfo = {
-    name: '',
-    image: '',
-  };
+  currentUser$: Observable<any> = this.store.select(selectUser);
 
-  constructor(private store: Store<any>) {
+  constructor(private store: Store<AppState>) {
     this.menuItems = [
       {
         icon: 'home',
@@ -37,14 +34,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getCurrentUser();
   }
-
-  // saveFavoriteTrack(id: string) {
-  //   this.spotifyService.saveFavoriteTrack(id).subscribe();
-  //   this.toast.show('Añadido a favoritos', {
-  //     icon: '💚',
-  //     position: 'bottom-right',
-  //   });
-  // }
 
   getCurrentUser() {
     this.store.dispatch(loadUserDetails());
