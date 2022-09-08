@@ -34,6 +34,7 @@ export class SpotifyService {
             title: track.name,
             description: track.artists[0].name,
             id: track.id,
+            favorite: false,
           }))
         )
       );
@@ -51,6 +52,7 @@ export class SpotifyService {
               title: track.name,
               description: track.artists[0].name,
               id: track.id,
+              favorite: true,
             }))
         )
       );
@@ -62,5 +64,13 @@ export class SpotifyService {
 
   deleteFavoriteTrack(trackId: string) {
     return this.http.delete(`${environment.url}/me/tracks?ids=${trackId}`);
+  }
+
+  checkUserFavorites(tracksId: string[]): Observable<boolean[]> {
+    return this.http.get<boolean[]>(`${environment.url}/me/tracks/contains`, {
+      params: {
+        ids: tracksId.join(','),
+      },
+    });
   }
 }

@@ -3,6 +3,7 @@ export interface TrackInfo {
   title: string;
   description: string | undefined;
   id: string;
+  favorite: boolean;
 }
 
 export interface TrackInfoState {
