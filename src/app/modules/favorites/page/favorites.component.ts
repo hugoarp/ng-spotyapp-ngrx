@@ -8,6 +8,7 @@ import { Observable, tap } from 'rxjs';
 import { selectFavoritesTracks } from 'src/app/core/store/favorites/favorites.selectors';
 import { TrackInfo } from 'src/app/core/interfaces/track';
 import { AppState } from 'src/app/core/store/app.state';
+import { toggleFavoriteTrack } from 'src/app/core/store/recommended/recommended.actions';
 
 @Component({
   selector: 'app-favorites',
@@ -31,5 +32,6 @@ export class FavoritesComponent implements OnInit {
 
   removeFavoriteTrack(trackInfo: TrackInfo) {
     this.store.dispatch(removeFavoriteTrack({ trackInfo }));
+    this.store.dispatch(toggleFavoriteTrack({ trackInfo }));
   }
 }

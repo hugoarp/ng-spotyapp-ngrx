@@ -18,11 +18,11 @@
   &__fav {
     cursor: pointer;
     font-size: 20px;
-    &:hover {
-      scale: 1.2;
+    &-isFavorite {
       color: $green-primary;
     }
   }
+
   &__text {
     width: 100%;
     white-space: nowrap;

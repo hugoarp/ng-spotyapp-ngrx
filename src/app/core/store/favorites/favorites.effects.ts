@@ -47,12 +47,19 @@ export class FavoritesTracksInfoEffects {
             type: addTrackToState.type,
             trackInfo,
           })),
-          tap(() =>
-            this.toast.show('Añadido a favoritos', {
-              icon: '💚',
-              position: 'bottom-right',
-            })
-          ),
+          tap(() => {
+            if (!trackInfo.favorite) {
+              this.toast.show('Añadido a favoritos', {
+                icon: '💚',
+                position: 'bottom-right',
+              });
+            } else {
+              this.toast.show('Eliminado de favoritos', {
+                icon: '💔',
+                position: 'bottom-right',
+              });
+            }
+          }),
           catchError(() => EMPTY)
         )
       )

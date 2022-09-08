@@ -6,7 +6,10 @@
       [text]="track.description!"
       class="track-details__text"
     ></app-text-a>
-    <i class="material-icons track-details__fav" (click)="emitFavoriteEvent()"
+    <i
+      class="material-icons track-details__fav"
+      (click)="emitFavoriteEvent()"
+      [ngClass]="{ 'track-details__fav-isFavorite': track.favorite }"
       >favorite
     </i>
   </article>

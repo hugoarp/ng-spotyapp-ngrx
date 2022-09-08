@@ -12,6 +12,7 @@ export class TrackDetailsComponent implements OnInit {
     title: '',
     description: '',
     id: '',
+    favorite: false,
   };
   @Output() favoriteEvent = new EventEmitter();
 

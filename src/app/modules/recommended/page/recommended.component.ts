@@ -5,7 +5,10 @@ import { selectRecommendedTracks } from 'src/app/core/store/recommended/recommen
 import { TrackInfo } from 'src/app/core/interfaces/track';
 import { addFavoriteTrack } from 'src/app/core/store/favorites/favorites.actions';
 import { AppState } from 'src/app/core/store/app.state';
-import { loadRecommendedTracks } from 'src/app/core/store/recommended/recommended.actions';
+import {
+  loadRecommendedTracks,
+  toggleFavoriteTrack,
+} from 'src/app/core/store/recommended/recommended.actions';
 
 @Component({
   selector: 'app-recommended',
@@ -27,5 +30,6 @@ export class RecommendedComponent implements OnInit {
 
   addFavoriteTrack(track: TrackInfo) {
     this.store.dispatch(addFavoriteTrack({ trackInfo: track }));
+    this.store.dispatch(toggleFavoriteTrack({ trackInfo: track }));
   }
 }
