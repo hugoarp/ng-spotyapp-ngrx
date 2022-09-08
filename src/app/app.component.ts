@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SpotifyService } from './core/services/spotify.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,4 @@ export class AppComponent {
   title = 'my-music-app-challenge';
 
   constructor() {}
-
-  hideNavbar(): boolean {
-    return window.location.pathname === '/login';
-  }
 }
