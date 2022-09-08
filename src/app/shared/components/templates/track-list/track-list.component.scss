@@ -2,19 +2,22 @@
 @import "mixins";
 
 .track-list {
-  padding: 1rem;
-  margin-bottom: 5rem;
+  padding: 2rem;
+  margin-bottom: 4rem;
   @include from($medium) {
     margin-bottom: 0;
     margin-left: 12rem;
   }
   &__title {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    @include from($large) {
+      font-size: 36px;
+    }
   }
   &__content {
     display: grid;
     justify-items: center;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
   }
 }
