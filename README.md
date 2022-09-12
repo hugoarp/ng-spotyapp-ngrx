@@ -1,27 +1,34 @@
-# SpotiApp Challenge
+# SpotyApp - Spotify API - NGRX
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+<div align="center">
+  <h2>
+    <a href="" target="_blank">
+      Demo
+    </a>
+  </h2>
+</div>
 
-## Development server
+Una app para consultar una lista de canciones recomendadas traidas de la API de Spotify (requiere loguearse con tu cuenta de Spotify y otorgar permisos), con la posibilidad de agregarlas y eliminarlas a tus favoritos (afecta tu cuenta real de Spotify).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Overview
 
-## Code scaffolding
+![screenshot](https://raw.githubusercontent.com/TCar10s/ng-films-app/ngrx/src/assets/img/app-home.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Notas
 
-## Build
+Recuerden reconstruir los módulos de Node.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+npm install
+```
 
-## Running unit tests
+Ejecute `ng serve` para un servidor de desarrollo. Vaya a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+ng serve
+```
 
-## Running end-to-end tests
+## Contact
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- GitHub [@hugoarp](https://github.com/hugoarp)
+- Twitter [@hugoarp\_](https://twitter.com/hugoarp_)
