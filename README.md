@@ -12,7 +12,7 @@ Una app para consultar una lista de canciones recomendadas traidas de la API de 
 
 ## Overview
 
-![screenshot](https://github.com/hugoarp/ng-spotify-ngrx/blob/master/src/assets/img/app-screenshot.png)
+![screenshot](https://raw.githubusercontent.com/hugoarp/ng-spotyapp-ngrx/master/src/assets/img/spotyAppSS.png)
 
 ## Notas
 
