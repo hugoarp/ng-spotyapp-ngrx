@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrackDetailsComponent debe hacer match con el snapshot 1`] = `
+<div
+  id="root1"
+>
+  <section
+    class="track-details"
+  >
+    <app-cover-img />
+    <app-text-b
+      class="track-details__text"
+    />
+    <article
+      class="track-details__footer"
+    >
+      <app-text-a
+        class="track-details__text"
+      />
+      <i
+        class="material-icons track-details__fav"
+      >
+        favorite 
+      </i>
+    </article>
+  </section>
+</div>
+`;

@@ -13,4 +13,8 @@ describe('AuthGuard', () => {
   it('should be created', () => {
     expect(guard).toBeTruthy();
   });
+
+  it('debe retornar true si el usuario está logueado', () => {
+    expect(guard.canActivate()).toBe(true);
+  });
 });

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavMenuComponent debe hacer match con el snapshot 1`] = `
+<div
+  id="root1"
+>
+  <nav
+    class="nav-menu"
+  >
+    <img
+      alt="Logo de spotify"
+      class="nav-menu__logo"
+      src="./assets/img/spotify-logo.svg"
+    />
+    <section
+      class="nav-menu__pages"
+    >
+      
+    </section>
+  </nav>
+</div>
+`;

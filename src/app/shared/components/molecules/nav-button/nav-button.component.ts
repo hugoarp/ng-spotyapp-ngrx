@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Button } from 'src/app/core/interfaces/button';
 
 @Component({
   selector: 'app-nav-button',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./nav-button.component.scss'],
 })
 export class NavButtonComponent implements OnInit {
-  @Input() buttonInfo: any = {
+  @Input() buttonInfo: Button = {
     icon: '',
     label: '',
     route: '',

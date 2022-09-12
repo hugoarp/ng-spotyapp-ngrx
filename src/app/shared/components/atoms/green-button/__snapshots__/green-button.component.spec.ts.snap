@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GreenButtonComponent debe hacer match con el snapshot 1`] = `
+<div
+  id="root1"
+>
+  <button
+    class="green-button"
+  >
+    <span
+      class="green-button__label"
+    >
+      
+    </span>
+  </button>
+</div>
+`;

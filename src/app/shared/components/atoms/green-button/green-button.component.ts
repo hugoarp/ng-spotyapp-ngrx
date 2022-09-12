@@ -7,13 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class GreenButtonComponent implements OnInit {
   @Input() label: string = '';
-  @Output() onClick = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  clickEvent() {
-    this.onClick.emit();
-  }
 }
