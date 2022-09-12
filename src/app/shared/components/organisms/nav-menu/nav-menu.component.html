@@ -1,14 +1,11 @@
 <nav class="nav-menu">
-  <img
-    src="./assets/img/spotify-logo.svg"
-    alt="Logo de spotify"
-    class="nav-menu__logo"
-  />
+  <img [src]="navbarLogo" alt="Logo de spotify" class="nav-menu__logo" />
   <section class="nav-menu__pages">
     <app-nav-button
       *ngFor="let item of menuItems"
       [buttonInfo]="item"
       [routerLink]="item.route"
+      routerLinkActive="nav-menu__pages--active"
     ></app-nav-button>
   </section>
 </nav>

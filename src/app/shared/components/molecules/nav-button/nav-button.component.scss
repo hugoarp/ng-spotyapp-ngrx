@@ -6,9 +6,10 @@
   flex-direction: column;
   align-items: center;
   color: $gray-primary;
+  padding: 0.5rem;
   @include from($medium) {
     flex-direction: row;
-    gap:0.5rem;
+    gap: 0.5rem;
   }
   &:hover {
     color: $light-primary;

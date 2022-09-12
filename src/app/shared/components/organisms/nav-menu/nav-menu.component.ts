@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Button } from 'src/app/core/interfaces/button';
 
 @Component({
   selector: 'app-nav-menu',
@@ -6,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./nav-menu.component.scss'],
 })
 export class NavMenuComponent implements OnInit {
-  @Input() menuItems: any[] = [];
+  @Input() menuItems: Button[] = [];
+  navbarLogo: string = './assets/img/spotify-logo.svg';
 
   constructor() {}
 
