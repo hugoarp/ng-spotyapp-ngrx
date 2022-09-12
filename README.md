@@ -2,7 +2,7 @@
 
 <div align="center">
   <h2>
-    <a href="" target="_blank">
+    <a href="#" target="_blank">
       Demo
     </a>
   </h2>
@@ -12,7 +12,7 @@ Una app para consultar una lista de canciones recomendadas traidas de la API de 
 
 ## Overview
 
-![screenshot](https://raw.githubusercontent.com/TCar10s/ng-films-app/ngrx/src/assets/img/app-home.png)
+![screenshot](https://github.com/hugoarp/ng-spotify-ngrx/blob/master/src/assets/img/app-screenshot.png)
 
 ## Notas
 
