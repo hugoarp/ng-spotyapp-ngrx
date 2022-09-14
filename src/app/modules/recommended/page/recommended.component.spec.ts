@@ -6,6 +6,7 @@ import { RecommendedComponent } from './recommended.component';
 describe('RecommendedComponent', () => {
   let component: RecommendedComponent;
   let fixture: ComponentFixture<RecommendedComponent>;
+  let compiled: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -16,9 +17,14 @@ describe('RecommendedComponent', () => {
     fixture = TestBed.createComponent(RecommendedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    compiled = fixture.nativeElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  test('debe hacer match con el snapshot', () => {
+    expect(compiled).toMatchSnapshot();
   });
 });

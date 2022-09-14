@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginComponent debe hacer match con el snapshot 1`] = `
+<div
+  id="root1"
+>
+  <section
+    class="login"
+  >
+    <img
+      alt="Logo de Spotify"
+      class="login__logo"
+      src="../../../../assets/img/spotify-icon.svg"
+    />
+    <article
+      class="login__title"
+    >
+      <h2
+        class="login__title-text"
+      >
+        Millions of songs.
+      </h2>
+      <h2
+        class="login__title-text"
+      >
+        Free on Spotify.
+      </h2>
+    </article>
+    <app-green-button />
+  </section>
+</div>
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserButtonComponent debe hacer match con el snapshot 1`] = `
+<div
+  id="root1"
+>
+  <section
+    class="user-button"
+  >
+    <img
+      alt="Foto de perfil"
+      class="user-button__img"
+      src=""
+    />
+    <p
+      class="user-button__name"
+    >
+      
+    </p>
+    <section
+      class="user-button__dropdown"
+    >
+      <article
+        class="user-button__menu"
+      >
+        <a
+          class="user-button__menu-a"
+        >
+          Cerrar sesión
+        </a>
+      </article>
+    </section>
+  </section>
+</div>
+`;

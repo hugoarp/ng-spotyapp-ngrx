@@ -8,6 +8,7 @@ import { LoginComponent } from './login.component';
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+  let compiled: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -20,9 +21,14 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    compiled = fixture.nativeElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  test('debe hacer match con el snapshot', () => {
+    expect(compiled).toMatchSnapshot();
   });
 });
